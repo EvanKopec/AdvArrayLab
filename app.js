@@ -295,14 +295,11 @@ console.log(vegetarianPlate)
 //BONUS
 
 //8b. Use the filter method to eliminate duplicate from problem 8a.
-function noDups(){
-    let allCuisine = typesOfCuisine()
-    let results = allCuisine.filter(
-        function(el){
-            
-        }
-    );
+function removeDuplicates(data){
+    return data.filter((value, index) => data.indexOf(value) === index);
+
 }
+console.log(removeDuplicates(cuisineArry))
 //11. Create a function that will return dishes whose ingredients array INCLUDES "tomato" OR "cheese".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Filter
@@ -310,7 +307,7 @@ function tomatoCheese(){
     let results = dishes.filter(
         function(el){
             if(el.ingredients.includes('cheese') && el.ingredients.includes("tomato")){
-                return true
+                return true;
             }
         }
     );
@@ -319,5 +316,16 @@ function tomatoCheese(){
 }
 //12. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
+function totalServing(){
+    let results = dishes.reduce(
+        function(total, el){
+            return total + el;
+        }
+    );
+
+    return results;
+}
+let getTotalServings = totalServing();
+console.log(getTotalServings)
 
 //13. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
