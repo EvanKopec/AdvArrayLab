@@ -231,21 +231,21 @@ function doesHaveChickpea(){
 
 //7. Create a function that will prompt the user to type the name of one ingredient. Then use a filter to find all the dishes whose ingredients array INCLUDES that ingredient. Return the new array.
 //Filter
-function whatIngredient(){
-    let ingredientType = prompt('What ingredient are you looking for?')
-    let results = dishes.filter(
-        function(el){
-            if(el.ingredients.includes(ingredientType)){
-                return true;
-            }
+// function whatIngredient(){
+//     let ingredientType = prompt('What ingredient are you looking for?')
+//     let results = dishes.filter(
+//         function(el){
+//             if(el.ingredients.includes(ingredientType)){
+//                 return true;
+//             }
 
-        }
-    );
+//         }
+//     );
 
-    return results;
-}
-let selectedIngredient = whatIngredient()
-console.log(selectedIngredient)
+//     return results;
+// }
+// let selectedIngredient = whatIngredient()
+// console.log(selectedIngredient)
 
 //8a. Create a function that will return an array of the string cuisine types. Ie, ["Italian", "Italian", "Mexican", ...]
 //Map
@@ -290,16 +290,33 @@ function onlyVegetarianFood(){
     return vegetarianDishes;
 }
 
-
-
+let vegetarianPlate = onlyVegetarianFood();
+console.log(vegetarianPlate)
 //BONUS
 
 //8b. Use the filter method to eliminate duplicate from problem 8a.
-
+function noDups(){
+    let allCuisine = typesOfCuisine()
+    let results = allCuisine.filter(
+        function(el){
+            
+        }
+    );
+}
 //11. Create a function that will return dishes whose ingredients array INCLUDES "tomato" OR "cheese".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Filter
+function tomatoCheese(){
+    let results = dishes.filter(
+        function(el){
+            if(el.ingredients.includes('cheese') && el.ingredients.includes("tomato")){
+                return true
+            }
+        }
+    );
 
+    return results
+}
 //12. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
 
